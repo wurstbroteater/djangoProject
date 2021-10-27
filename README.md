@@ -10,7 +10,7 @@ Try and Error Project for Django
 #### Install requirements
 `pip install -r requirements.txt`
 
-The following two steps are summarized `makeMigrate.sh`
+The following two steps are summarized `makeMigrate`.sh (for linux) or .bat (for windows)
 ### Make new Migrations
 `python manage.py makemigrations djangoProject`
 
