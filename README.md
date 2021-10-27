@@ -2,23 +2,30 @@
 Try and Error Project for Django
 
 ## Before start
-**Edit** `EMAIL_HOST_USER` `EMAIL_HOST_PASSWORD` in `djangoProject/settings.py`
-#### Create new requirements
+### Create new requirements
+Assure correct dependencies are installed
+
 `pip freeze > requirements.txt`
 
-## Setup for fresh start
+## Fresh start
 
-#### Install requirements
+### Install requirements
 `pip install -r requirements.txt`
 
 ### Create new super user
 `python manage.py createsuperuser`
 
-The following two steps are summarized `makeMigrate`.sh (for linux) or .bat (for windows)
+### Migrations
+The following two commands are summarized `makeMigrate`.sh (for linux) or .bat (for windows)
+```
+python manage.py makemigrations djangoProject
+python manage.py migrate
+```
+### Start Email Server
+Start local email server
+`python -m smtpd -n -c DebuggingServer localhost:587`
 
-### Make new Migrations
-`python manage.py makemigrations djangoProject`
 
-### Migrate new migrations
-`python manage.py migrate`
+
+
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wurstbroteaters' Wonderful Website</title>
+    <style>
+        label, input {
+            display: block;
+        }
+
+        span.helptext {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<center>
+    <h1>Welcome 2 Wurstbroteaters Wonderful Website</h1>
+    <p>
+        15 Bugs, little man ... wait ...<br/>
+        Are You Even Supposed To Be Here Today?!
+    </p>
+
+    {% block checklogin %}
+        {% if user.is_authenticated %}
+            <h2>Hello {{ user.username }}!</h2>
+            <p>You are currently logged in the system!</p>
+            <a href="{% url 'logout' %}">Logout here</a>
+            <p>Here is your dashboard: </p>
+            {% block dashboard %}{% endblock %}
+        {% else %}
+            <!--
+            On dashboard/ this will be displayed but
+            on /login this block is overwritten by the content of login.html
+            ... Probably not a good design decision
+            -->
+            {% block loginForm %}
+                <h2>You are not logged in the system!</h2>
+                <p>
+                    Login: <a href="{% url 'login' %}">click here</a> or <br/>
+                    Register: <a href="{% url 'login' %}">click here</a> or <br />
+                    Reset password: <a href="{% url 'password_reset' %}">click here</a>
+                </p>
+            {% endblock %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+
+
+</center>
+</body>
+</html>
