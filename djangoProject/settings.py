@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users',
+    'registration.apps.RegistrationConfig',
+    'crispy_forms',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,3 +130,8 @@ LOGIN_REDIRECT_URL = "dashboard"  # define page which should be displayed after 
 
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 587
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = "TO_BE_FILLED_BY_USER@uni-ulm.de"
+# EMAIL_HOST_PASSWORD = 'TO_BE_FILLED_BY_USER'
