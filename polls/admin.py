@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Question, Choice
+from users.models import ExtendedUser
 
 
 class ChoiceInline(admin.TabularInline):
@@ -20,3 +21,4 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
+admin.site.register(ExtendedUser)

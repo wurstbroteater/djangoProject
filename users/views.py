@@ -3,8 +3,7 @@ from django.contrib.auth import login
 from django.db import transaction
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from users.forms import CustomUserCreationForm, CustomExtendedUserCreationForm
-from django.http import HttpResponse
+from users.forms import CustomUserCreationForm
 
 
 def dashboard(request):
@@ -16,9 +15,7 @@ def register(request):
     if request.method == "GET":
         return render(
             request, "users/register.html",
-            {"user_form": CustomUserCreationForm,
-             "extended_user_form": CustomExtendedUserCreationForm
-             }
+            {"form": CustomUserCreationForm}
         )
     elif request.method == "POST":
         user_form = CustomUserCreationForm(request.POST)
@@ -31,5 +28,3 @@ def register(request):
             login(request, user)
             messages.success(request, 'Your profile was successfully updated!')
             return redirect(reverse("dashboard"))
-        else:
-            return HttpResponse("Keine valide Angabe")
