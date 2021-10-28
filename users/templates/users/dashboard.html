@@ -4,7 +4,8 @@
     {% if user.is_authenticated %}
         <p>
             Ah I see, the negotiator {{ user.username }} has arrived! <br/>
-            What do you want to do? <br />
+            You seem to be from <b>{{ user.extendeduser.institute|default:'anonymous proxy' }}</b> <br/>
+            What do you want to do? <br/>
             <a href="{% url 'logout' %}">Logout</a> <br/>
             <a href="{% url 'password_change' %}">Change password</a>
         </p>

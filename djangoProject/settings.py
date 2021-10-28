@@ -101,6 +101,13 @@ AUTH_PASSWORD_VALIDATORS = [
     # },
 ]
 
+# Define backends for login validation
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    # "social_core.backends.github.GithubOAuth2",
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
