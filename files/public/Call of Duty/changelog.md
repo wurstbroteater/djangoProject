@@ -1,1 +1,1 @@
-On '2022-03-04 08:07:32.255748+00:00' the feature model 'Testerino' was uploaded by 'a@b.de'
+On '2022-03-04 08:10:05.280960+00:00' the feature model 'Testerino v2' was uploaded by 'a@b.de'
